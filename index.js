@@ -9,6 +9,10 @@ function Book(title, author, numPages, read) {
   this.read = read;
 }
 
+function addBook() {
+  document.querySelector(".form-container").style.display = "flex";
+}
+
 function addBookToLibrary(title, author, numPages, read) {
   // do stuff here
   const book = new Book(title, author, numPages, read);
@@ -19,6 +23,7 @@ function displayBooks() {
     for (i in myLibrary) {
         const card = document.createElement("div");
         card.classList.add('card-item');
+        card.textContent = myLibrary[i].name;
         display.appendChild(card);
     }
 }

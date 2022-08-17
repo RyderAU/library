@@ -8,9 +8,22 @@
   <body>
     <div class="top-bar">
       <div>Library</div>
-      <div class="add-button">+</div>
+      <div class="add-button" onclick="addBook()">+</div>
     </div>
     <div class="card-container">
+    </div>
+    <div class="form-container">
+      <form class="form">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title"><br><br>
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author"><br><br>
+        <label for="numPages">Number of pages:</label>
+        <input type="text" id="numPages" name="numPages"><br><br>
+        <label for="read">Read:</label>
+        <input type="checkbox" id="read" name="read"><br><br>
+        <input type="submit" value="Submit">
+      </form>
     </div>
     <script src="index.js"></script>
   </body>

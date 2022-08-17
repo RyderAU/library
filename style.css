@@ -29,3 +29,9 @@ body {
   height: 10px;
   background-color: blue;
 }
+
+.form-container {
+  justify-content: center;
+  border: 1px solid red;
+  display: none;
+}
