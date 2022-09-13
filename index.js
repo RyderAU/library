@@ -1,4 +1,4 @@
-let myLibrary = [{name: "The Hobbit", author: "J.R.R. Tolkien", pages: 295, read: 0}];
+let myLibrary = [];
 const display = document.querySelector(".card-container");
 
 function Book(title, author, numPages, read) {
@@ -9,7 +9,7 @@ function Book(title, author, numPages, read) {
   this.read = read;
 }
 
-function addBook() {
+function displayForm() {
   document.querySelector(".form-container").style.display = "flex";
 }
 
@@ -17,6 +17,9 @@ function addBookToLibrary(title, author, numPages, read) {
   // do stuff here
   const book = new Book(title, author, numPages, read);
   myLibrary.push(book);
+  displayBooks();
+  document.querySelector(".form-container").style.display = "none";
+  console.log(myLibrary);
 }
 
 function displayBooks() {
