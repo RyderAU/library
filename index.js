@@ -17,6 +17,7 @@ function addBookToLibrary(title, author, numPages, read) {
   // do stuff here
   const book = new Book(title, author, numPages, read);
   myLibrary.push(book);
+  console.log(read);
   displayBook(book.title, book.author, book.numPages, book.read);
   document.querySelector(".form-container").style.display = "none";
   console.log(myLibrary);
@@ -29,7 +30,8 @@ function displayBook(title, author, numPages, read) {
   // title
   const cardTextItemOne = document.createElement("div");
   cardTextItemOne.classList.add('card-text-item');
-  cardTextItemOne.textContent = title;
+  cardTextItemOne.classList.add('card-text-item-title');
+  cardTextItemOne.textContent = `'${title}'`;
   // author
   const cardTextItemTwo = document.createElement("div");
   cardTextItemTwo.classList.add('card-text-item');
@@ -37,8 +39,9 @@ function displayBook(title, author, numPages, read) {
   // number of pages
   const cardTextItemThree = document.createElement("div");
   cardTextItemThree.classList.add('card-text-item');
-  cardTextItemThree.textContent = numPages;
+  cardTextItemThree.textContent = `${numPages} pages`;
   // read status
+  console.log(read)
   const cardTextItemFour = document.createElement("div");
   cardTextItemFour.classList.add('card-text-item');
   cardTextItemFour.textContent = read;
