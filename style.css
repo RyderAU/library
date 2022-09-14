@@ -22,13 +22,20 @@ body {
 .card-container {
   display: flex;
   padding: 20px;
+  flex-wrap: wrap;
 }
 
 .card-item {
   width: 200px;
   height: 300px;
   margin: 30px;
+  display: flex;
+  flex-direction: column;
   background-color: blue;
+}
+
+.card-text-item {
+  background-color: purple;
 }
 
 .form-container {

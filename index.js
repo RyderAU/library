@@ -17,16 +17,34 @@ function addBookToLibrary(title, author, numPages, read) {
   // do stuff here
   const book = new Book(title, author, numPages, read);
   myLibrary.push(book);
-  displayBook(book.title);
+  displayBook(book.title, book.author, book.numPages, book.read);
   document.querySelector(".form-container").style.display = "none";
   console.log(myLibrary);
 }
 
-function displayBook(title) {
+function displayBook(title, author, numPages, read) {
   console.log('adding one')
   const card = document.createElement("div");
   card.classList.add('card-item');
-  card.textContent = title;
+  // title
+  const cardTextItemOne = document.createElement("div");
+  cardTextItemOne.classList.add('card-text-item');
+  cardTextItemOne.textContent = title;
+  // author
+  const cardTextItemTwo = document.createElement("div");
+  cardTextItemTwo.classList.add('card-text-item');
+  cardTextItemTwo.textContent = author;
+  // number of pages
+  const cardTextItemThree = document.createElement("div");
+  cardTextItemThree.classList.add('card-text-item');
+  cardTextItemThree.textContent = numPages;
+  // read status
+  const cardTextItemFour = document.createElement("div");
+  cardTextItemFour.classList.add('card-text-item');
+  cardTextItemFour.textContent = read;
+  card.appendChild(cardTextItemOne);
+  card.appendChild(cardTextItemTwo);
+  card.appendChild(cardTextItemThree);
   display.appendChild(card);
 }
 
