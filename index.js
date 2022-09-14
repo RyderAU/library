@@ -29,3 +29,10 @@ function displayBook(title) {
   card.textContent = title;
   display.appendChild(card);
 }
+
+window.onclick = function(e) {
+  // close modal when clicking off
+  if (e.target.className == "form-container") {
+    document.querySelector(".form-container").style.display = "none";
+  }
+}
