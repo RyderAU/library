@@ -1,8 +1,9 @@
 let myLibrary = [];
 const display = document.querySelector(".card-container");
 
-function Book(title, author, numPages, read) {
+function Book(id, title, author, numPages, read) {
   // the constructor...
+  this.id = id;
   this.title = title;
   this.author = author;
   this.numPages = numPages;
@@ -15,15 +16,14 @@ function displayForm() {
 
 function addBookToLibrary(title, author, numPages, read) {
   // do stuff here
-  const book = new Book(title, author, numPages, read);
+  const book = new Book((myLibrary.length + 1), title, author, numPages, read);
   myLibrary.push(book);
-  console.log(read);
-  displayBook(book.title, book.author, book.numPages, book.read);
+  console.log('books id is ' + book.id)
+  displayBook(book.id, book.title, book.author, book.numPages, book.read);
   document.querySelector(".form-container").style.display = "none";
-  console.log(myLibrary);
 }
 
-function displayBook(title, author, numPages, read) {
+function displayBook(id, title, author, numPages, read) {
   console.log('adding one')
   const card = document.createElement("div");
   card.classList.add('card-item');
