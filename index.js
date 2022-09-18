@@ -44,10 +44,17 @@ function displayBook(title, author, numPages, read) {
   console.log(read)
   const cardTextItemFour = document.createElement("div");
   cardTextItemFour.classList.add('card-text-item');
-  cardTextItemFour.textContent = read;
+  if (read) {
+    cardTextItemFour.classList.add('card-text-item-read');
+    cardTextItemFour.textContent = 'read';
+  } else {
+    cardTextItemFour.classList.add('card-text-item-not-read');
+    cardTextItemFour.textContent = 'not read';
+  }
   card.appendChild(cardTextItemOne);
   card.appendChild(cardTextItemTwo);
   card.appendChild(cardTextItemThree);
+  card.appendChild(cardTextItemFour);
   display.appendChild(card);
 }
 
